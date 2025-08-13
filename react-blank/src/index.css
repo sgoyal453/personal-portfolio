@@ -1,0 +1,62 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  background: #ffffff;
+  background-image: url('/mount.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #000000;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Layout wrapper centered both axes */
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Frosted glass rounded rectangle */
+.glass-panel {
+  width: min(60vw, 700px);
+  height: 160px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transform: translateY(0px);
+  animation: rise-once 800ms ease-out forwards;
+}
+
+@media (min-width: 768px) {
+  .glass-panel {
+    height: 180px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.32);
+  }
+}
+
+@keyframes rise-once {
+  from { transform: translateY(0); }
+  to { transform: translateY(-250px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-panel { animation: none; transform: none; }
+}

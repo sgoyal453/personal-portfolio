@@ -1,0 +1,70 @@
+# Performance & Accessibility Guidelines - Liquid Glass Snowcap Portfolio
+
+## Performance Targets
+- Lighthouse Performance Score: ≥ 90
+- Lighthouse Accessibility Score: ≥ 95
+- Lighthouse Best Practices Score: ≥ 95
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Cumulative Layout Shift: < 0.1
+
+## Animation Performance
+- 60fps target for all animations
+- Use `transform` and `opacity` only
+- Throttle to `requestAnimationFrame`
+- Avoid layout-triggering properties
+- Use `will-change` sparingly
+
+## Accessibility Standards (WCAG AA)
+- Color contrast ratio: 4.5:1 minimum
+- Focus indicators: 2-3px outline with accent color
+- Keyboard navigation: Tab, Enter, Space, Arrow keys
+- Screen reader compatibility
+- Semantic HTML structure
+
+## Reduced Motion Support
+```css
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+```
+
+## JavaScript Performance
+- Bundle size: < 10 KB min+gz
+- No external dependencies
+- Debounce scroll events
+- Cleanup event listeners
+- Graceful degradation
+
+## Image Optimization
+- Inline SVG only (no raster images)
+- Optimize SVG code
+- Use CSS gradients for backgrounds
+- No external image requests
+
+## Core Web Vitals
+- Optimize for LCP (Largest Contentful Paint)
+- Minimize CLS (Cumulative Layout Shift)
+- Improve FID (First Input Delay)
+- Use proper loading strategies
+
+## Browser Support
+- Latest Chrome, Safari, Firefox
+- Graceful degradation for older browsers
+- Feature detection for modern APIs
+- Fallbacks for unsupported features
+
+## Testing Requirements
+- Cross-browser testing
+- Lighthouse audits
+- Accessibility testing with screen readers
+- Performance monitoring
+- Mobile responsiveness testing
+description:
+globs:
+alwaysApply: false
+---

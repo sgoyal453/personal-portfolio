@@ -1,0 +1,64 @@
+# JavaScript/TypeScript Guidelines - Liquid Glass Snowcap Portfolio
+
+## Core Principles
+- Minimal JavaScript (<10 KB min+gz)
+- No frameworks or runtime dependencies
+- Vanilla JS with optional TypeScript
+- Performance-first approach
+
+## Animation Implementation
+- Use `requestAnimationFrame` for all animations
+- Throttle scroll events and animations
+- Implement reduced motion support
+- Use `transform` and `opacity` only for 60fps
+
+## Snow Particles System
+```typescript
+interface SnowParticle {
+  x: number;
+  y: number;
+  size: number;
+  speed: number;
+  opacity: number;
+}
+```
+
+## Parallax Implementation
+- Use `IntersectionObserver` for scroll triggers
+- Implement "breathing" parallax for mountain layers
+- Support reduced motion preferences
+- Throttle to 60fps
+
+## Intersection Observer Usage
+- Smooth reveal animations for sections
+- Trigger glass panel slides
+- Optimize performance with proper thresholds
+- Support reduced motion
+
+## Performance Optimization
+- Debounce scroll events
+- Use `requestAnimationFrame` for animations
+- Minimize DOM queries and updates
+- Implement proper cleanup for event listeners
+
+## Accessibility Features
+- Keyboard navigation support
+- Focus management
+- Screen reader compatibility
+- Reduced motion detection and handling
+
+## Build Process (Optional)
+- Use esbuild for TypeScript compilation
+- Minimize bundle size
+- No external dependencies
+- Static output for hosting
+
+## Error Handling
+- Graceful degradation for older browsers
+- Fallbacks for unsupported features
+- Console logging for debugging
+- No blocking errors
+description:
+globs:
+alwaysApply: false
+---
